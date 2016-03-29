@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Hello World</name>
+    <description>
+        Hello World sample application that responds to the deviceready event.
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="android-minSdkVersion" value="7" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+	<preference name="SplashScreen" value="screen" />
+	<preference name="SplashScreenDelay" value="4000" />		
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/drawable-ldpi-portrait/splash.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/drawable-mdpi-portrait/splash.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/drawable-hdpi-portrait/splash.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/drawable-xhdpi-portrait/splash.png" />	
+<!--    <splash src="res/screen/drawable-ldpi-portrait/screen.png" platform="android" density="port-ldpi" />
+    <splash src="res/screen/drawable-mdpi-portrait/screen.png" platform="android" density="port-mdpi" />
+    <splash src="res/screen/drawable-hdpi-portrait/screen.png" platform="android" density="port-hdpi" />
+    <splash src="res/screen/drawable-xhdpi-portrait/screen.png" platform="android" density="port-xhdpi" />-->
+	<splash src="splash.png" />		    
+</widget>
