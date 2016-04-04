@@ -8,23 +8,25 @@
 <script type = "text/javascript">
 $(init);
 function init(){
-$.getJSON('http://sysnet.utcc.ac.th/mobilise/sw328/showcontact.jsp', function (data){
-        $('#output').html('');
-        for(var i = 0; i < data.length; i++){
-            $('#output').append("<li>" + data[i].name + "</li>");
-			$('#output').listview( "refresh" );
-        }
-    } // end callback function
-);
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+function onDeviceReady(){
+    var options = {frequency: 1000};
+    navigator.compass.watchHeading(onSuccess, onError, options);
+}
+function onSuccess(heading){
+    var compassHeading = Math.round(heading.magneticHeading);
+    var output = "Heading: " + compassHeading + " degrees<br/>";
+    $("#degrees").html(output);
+}
+function onError(error){
+    alert("Error " + error.code);
 }
 </script>
 </head>
-<body onload="init()">
-<h1 id="checkdevice">Hello...</h1>
-<div class="content" data-role="content">
-	<ul id="output" data-role="listview" data-filter="true" data-filter-placeholder="Enter the keyword to search...">
-	</ul>
-</div>
+<body>
+<h1>Basic Compass</h1>
+<div id="degrees"></div>
 <script type="text/javascript" src="cordova.js"></script>
 </body>
 </html>
